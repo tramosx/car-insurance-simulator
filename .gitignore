@@ -1,0 +1,16 @@
+# Bytecode compilado do Python
+__pycache__/
+*.py[cod]
+
+
+# Diretórios de ambientes virtuais
+venv/
+
+# Arquivos do Vscode
+.vscode/
+
+# Configurações locais e credenciais
+.env
+
+# Arquivos gerados pelo Docker
+docker-compose.override.yml
