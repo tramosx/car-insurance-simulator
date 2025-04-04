@@ -4,7 +4,7 @@ __pycache__/
 
 
 # Diretórios de ambientes virtuais
-venv/
+.venv/
 
 # Arquivos do Vscode
 .vscode/
