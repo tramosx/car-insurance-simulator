@@ -31,6 +31,10 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### 2.1 Configuração do Ambiente
+
+    Copie o arquivo `.env.example` e renomeie para `.env`:
+
 ### 3. Run the application
 
 ```bash
