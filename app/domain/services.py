@@ -1,12 +1,19 @@
 from app.domain.interfaces import IInsuranceService
-from app.config.config import COVERAGE_PERCENTAGE, CURRENT_YEAR
 from app.domain.entities import Car, Insurance
+from app.utils.datetime_helpers import get_current_year
+from app.config.config import (
+    COVERAGE_PERCENTAGE,
+    AGE_RATE_FACTOR,
+    VALUE_RATE_STEP,
+    VALUE_RATE_FACTOR
+)
 
 
 class InsuranceService(IInsuranceService):
     def calculate_insurance(self, car: Car, insurance: Insurance):
-        age_rate = (CURRENT_YEAR - car.year) * 0.005
-        value_rate = (car.value // 10000) * 0.005
+        current_year = get_current_year()
+        age_rate = (current_year - car.year) * AGE_RATE_FACTOR
+        value_rate = (car.value // VALUE_RATE_STEP) * VALUE_RATE_FACTOR
         applied_rate = age_rate + value_rate
 
         base_premium = car.value * applied_rate
